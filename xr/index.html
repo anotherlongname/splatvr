@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>WebXR AR STL Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body { margin: 0; height: 100%; background: #000; }
+    #ui {
+      position: fixed; top: 10px; left: 10px; z-index: 10;
+      background: rgba(20,20,20,0.7); padding: 10px; border-radius: 8px; color: #fff;
+      font-family: system-ui, sans-serif;
+    }
+    #enterAR { margin-top: 8px; }
+    #status { margin-top: 6px; font-size: 12px; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <label><b>Upload STL:</b> <input id="fileInput" type="file" accept=".stl"></label>
+    <button id="enterAR">Enter AR</button>
+    <div id="status">Ready</div>
+  </div>
+  <canvas id="xr-canvas"></canvas>
+
+  <!-- Three.js and loaders -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/jsm/loaders/STLLoader.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/jsm/webxr/VRButton.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
