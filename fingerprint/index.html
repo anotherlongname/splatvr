@@ -159,6 +159,7 @@
                 const device = await navigator.usb.requestDevice({
                     filters: [
                         // Add common device filters
+                        { vendorId: 0x05ba, productId: 0x000a },
                         { vendorId: 0x2341 }, // Arduino
                         { vendorId: 0x1a86 }, // QinHeng Electronics
                         { vendorId: 0x0403 }, // FTDI
